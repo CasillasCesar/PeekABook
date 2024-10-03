@@ -2,7 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //Primeng Modules
-const modPrime : any [] = [];
+import { MegaMenuModule } from 'primeng/megamenu';
+import { ToolbarModule } from 'primeng/toolbar';
+
+//Primeng Modules Array
+const modPrime : any [] = [
+  MegaMenuModule,
+  ToolbarModule
+];
 
 @NgModule({
   declarations: [],
