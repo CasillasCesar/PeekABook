@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimengModule } from './primeng.module'
+import { PagesModule } from './pages/pages.module';
+import { ComponentsModule } from './components/components.module';
 
 
 @NgModule({
@@ -14,8 +16,10 @@ import { PrimengModule } from './primeng.module'
     BrowserModule,
     BrowserAnimationsModule,
     PrimengModule,
-    AppRoutingModule
-    ],  // Aquí importas otros módulos necesarios
+    PagesModule,
+    AppRoutingModule,
+    ComponentsModule
+    ],
   bootstrap: [AppComponent]  // Este es el componente raíz que arranca la aplicación
 })
 export class AppModule {}
