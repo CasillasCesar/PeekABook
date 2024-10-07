@@ -3,3 +3,18 @@
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
+
+
+.p-toolbar{
+  border: 0px !important;
+  border-radius: 0px !important;
+  padding: 0px 10px 10px;
+}
+
+.p-menubar {
+  border: 0px;
+}
+
+.p-menuitem .p-menuitem-text{
+  color: black;
+}

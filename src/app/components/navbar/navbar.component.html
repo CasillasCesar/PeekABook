@@ -1,20 +1,36 @@
-<p-toolbar>
+<p-toolbar [style]="{'background-color': '#8B4513'}">
   <div class="p-toolbar-group-start">
     <h1 style="font-family: 'Emilys Candy';">Peek [A] Book</h1>
   </div>
   <div class="p-toolbar-group-center">
     <span class="p-input-icon-right">
-      <input pInputText placeholder="Search"/>
-      <i class="pi pi-search" style="background-color: red;"></i>
+      <input pInputText class="p-inputtext" placeholder="Search"/>
+      <i class="pi pi-search"></i>
     </span>
   </div>
-  <div class="p-toolbar-group-end">
-    <button>Hola</button>
-</div>
+  <div class="p-toolbar-group-end" *ngIf="auth">
+    <button>
+      <p-avatar
+      label="P"
+      styleClass="mr-2"
+      size="xlarge"
+      shape="circle" />
+    </button>
+  </div>
+  <div class="p-toolbar-group-end" *ngIf="!auth">
+    <button>HolaxD</button>
+  </div>
 </p-toolbar>
 <nav>
-  <div class="card">
-    <p-megaMenu [model]="items" />
-  </div>
+  <p-toolbar [style]="{'background-color': '#8B4513'}" class="custom-toolbar align-items-center">
+    <!-- <div class="p-toolbar-group-start">
+    </div> -->
+    <div class="p-toolbar-group-center">
+      <p-menubar [model]="items" [style]="{'background-color': 'transparent'}" />
+    </div>
+    <!-- <div class="p-toolbar-group-end">
+
+    </div> -->
+  </p-toolbar>
 </nav>
 

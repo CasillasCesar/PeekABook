@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PrimengModule } from './primeng.module'
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -20,6 +21,9 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     ComponentsModule
     ],
-  bootstrap: [AppComponent]  // Este es el componente raíz que arranca la aplicación
+  bootstrap: [AppComponent],
+  providers: [
+    provideAnimationsAsync()
+  ]  // Este es el componente raíz que arranca la aplicación
 })
 export class AppModule {}
