@@ -4,33 +4,29 @@
   </div>
   <div class="p-toolbar-group-center">
     <span class="p-input-icon-right">
-      <input pInputText class="p-inputtext" placeholder="Search"/>
-      <i class="pi pi-search"></i>
+      <input pInputText class="p-inputtext" placeholder="Search" (keydown.enter)="buscar()"/>
+      <i class="pi pi-search" (click)="buscar()" style="cursor: pointer;"></i>
     </span>
   </div>
   <div class="p-toolbar-group-end" *ngIf="auth">
-    <button>
-      <p-avatar
-      label="P"
-      styleClass="mr-2"
-      size="xlarge"
-      shape="circle" />
-    </button>
+    <p-avatar
+    label="P"
+    styleClass="mr-2"
+    size="xlarge"
+    shape="circle" />
   </div>
   <div class="p-toolbar-group-end" *ngIf="!auth">
-    <button>HolaxD</button>
+    <button class="mr-1">Registrarse</button>
+    <button>Iniciar Sesion</button>
   </div>
 </p-toolbar>
 <nav>
   <p-toolbar [style]="{'background-color': '#8B4513'}" class="custom-toolbar align-items-center">
-    <!-- <div class="p-toolbar-group-start">
-    </div> -->
-    <div class="p-toolbar-group-center">
-      <p-menubar [model]="items" [style]="{'background-color': 'transparent'}" />
+    <div class="grid" style="width: 100%;">
+      <div class="col-offset-3" >
+        <p-menubar [model]="items" [style]="{'background-color': 'transparent'}" />
+      </div>
     </div>
-    <!-- <div class="p-toolbar-group-end">
-
-    </div> -->
   </p-toolbar>
 </nav>
 

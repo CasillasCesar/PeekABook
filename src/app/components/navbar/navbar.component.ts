@@ -54,4 +54,9 @@ export class NavbarComponent {
       icon: 'pi pi-envelope',
     },
   ];
+
+  buscar(){
+    alert("Hola")
+  }
+
 }
