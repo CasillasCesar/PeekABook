@@ -7,6 +7,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenubarModule } from 'primeng/menubar';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 //Primeng Modules Array
 const modPrime : any [] = [
@@ -14,7 +15,8 @@ const modPrime : any [] = [
   MenubarModule,
   ToolbarModule,
   AvatarModule,
-  AvatarGroupModule
+  AvatarGroupModule,
+  BreadcrumbModule
 ];
 
 @NgModule({
