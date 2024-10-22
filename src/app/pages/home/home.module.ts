@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../../components/components.module';
+import { HomerComponent } from '../../components/homer/homer.component';
 
 
 
@@ -13,7 +14,10 @@ import { ComponentsModule } from '../../components/components.module';
     ComponentsModule,
     RouterModule.forChild(
       [
-        { path: '', component: HomeComponent }
+        { path: '', component: HomeComponent, children:[
+          { path: '', redirectTo: 'content', pathMatch: 'full' },
+          { path: 'content', component: HomerComponent },
+        ] },
       ]
     )
   ],
