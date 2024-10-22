@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
@@ -55,8 +57,32 @@ export class NavbarComponent {
     },
   ];
 
+  bread_items : MenuItem[] = [
+    { label: 'Electronics' },
+    { label: 'Computer' },
+    { label: 'Accessories' },
+    { label: 'Keyboard' },
+    { label: 'Wireless' }
+];
+
+home : MenuItem = { icon: 'pi pi-home', routerLink: '/' };
+
+  constructor(private router : Router){
+
+  }
+
   buscar(){
     alert("Hola")
+  }
+
+  goHome(){
+    console.warn(this.auth);
+
+    if(this.auth){
+      this.router.navigateByUrl("in-home")
+    }else{
+      this.router.navigateByUrl("home")
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 <p-toolbar [style]="{'background-color': '#8B4513'}">
-  <div class="p-toolbar-group-start">
+  <div class="p-toolbar-group-start" style="margin-left: 3em; cursor: pointer;" (click)="goHome()">
     <h1 style="font-family: 'Emilys Candy';">Peek [A] Book</h1>
   </div>
   <div class="p-toolbar-group-center">
@@ -20,6 +20,7 @@
     <button>Iniciar Sesion</button>
   </div>
 </p-toolbar>
+
 <nav>
   <p-toolbar [style]="{'background-color': '#8B4513'}" class="custom-toolbar align-items-center">
     <div class="grid" style="width: 100%;">
@@ -29,4 +30,8 @@
     </div>
   </p-toolbar>
 </nav>
+
+<div id="breadcrumb">
+
+<app-breadcrumb></app-breadcrumb>
 
