@@ -8,6 +8,9 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenubarModule } from 'primeng/menubar';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
 
 //Primeng Modules Array
 const modPrime : any [] = [
@@ -16,7 +19,10 @@ const modPrime : any [] = [
   ToolbarModule,
   AvatarModule,
   AvatarGroupModule,
-  BreadcrumbModule
+  BreadcrumbModule,
+  CardModule,
+  CarouselModule,
+  ButtonModule
 ];
 
 @NgModule({
