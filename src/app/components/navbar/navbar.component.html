@@ -1,37 +1,25 @@
-<p-toolbar [style]="{'background-color': '#8B4513'}">
-  <div class="p-toolbar-group-start" style="margin-left: 3em; cursor: pointer;" (click)="goHome()">
+<div class="grid" [style]="{'background-color': '#8B4513'}" style="align-items: center;">
+  <div id="logo" class="col-12 sm:col-12 md:col-4" style="cursor: pointer; text-align: center;" (click)="goHome()">
     <h1 style="font-family: 'Emilys Candy';">Peek [A] Book</h1>
   </div>
-  <div class="p-toolbar-group-center">
-    <span class="p-input-icon-right">
-      <input pInputText class="p-inputtext" placeholder="Search" (keydown.enter)="buscar()"/>
-      <i class="pi pi-search" (click)="buscar()" style="cursor: pointer;"></i>
+  <div class="col-12 sm:col-7 md:col-4" style="padding: 0em 0em;">
+    <span class="p-input-icon-right" style="width: 100%; background-color: green; cursor: pointer;" (click)="buscar()">
+      <input pInputText class="p-inputtext" placeholder="Search" (keydown.enter)="buscar()" style="width: 88%;"  (click)="$event.stopPropagation()"/>
+      <i class="pi pi-search" style="cursor: pointer; color: white;"></i>
     </span>
   </div>
-  <div class="p-toolbar-group-end" *ngIf="auth">
-    <p-avatar
-    label="P"
-    styleClass="mr-2"
-    size="xlarge"
-    shape="circle" />
+  <div class="col-12 sm:col-5 md:col-4" style="text-align: center; align-items: center;">
+      <button class="p-button mr-1">Registrarse</button>
+      <button class="p-button">Iniciar Sesion</button>
   </div>
-  <div class="p-toolbar-group-end" *ngIf="!auth">
-    <button class="mr-1">Registrarse</button>
-    <button>Iniciar Sesion</button>
-  </div>
-</p-toolbar>
+</div>
 
-<nav>
-  <p-toolbar [style]="{'background-color': '#8B4513'}" class="custom-toolbar align-items-center">
-    <div class="grid" style="width: 100%;">
-      <div class="col-offset-3" >
-        <p-menubar [model]="items" [style]="{'background-color': 'transparent'}" />
-      </div>
+  <div class="grid " [style]="{'background-color': '#8B4513','align-items':'center'}">
+    <div class="col-12 ">
+      <p-menubar [model]="items" [style]="{'background-color': 'transparent'}" />
     </div>
-  </p-toolbar>
-</nav>
+  </div>
 
-<div id="breadcrumb">
 
 <app-breadcrumb></app-breadcrumb>
 
