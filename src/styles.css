@@ -18,3 +18,12 @@
 .p-menuitem .p-menuitem-text{
   color: black;
 }
+
+.p-card-content{
+  border: 10px;
+  border-radius: 10px 10xp 10px 10px;
+}
+
+.p-card-title{
+  height: 2em;
+}
