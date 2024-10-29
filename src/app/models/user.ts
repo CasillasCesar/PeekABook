@@ -1,7 +1,7 @@
 export interface User {
-  name : String,
-  email : String,
-  phoneNumber : Number,
-  state : String,
-  city : String
+  name : string,
+  email : string,
+  phoneNumber : number,
+  state : string,
+  city : string
 }
