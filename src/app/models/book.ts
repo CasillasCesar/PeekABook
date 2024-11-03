@@ -18,4 +18,6 @@ export interface Book {
   price : number
   images : string[],
   description : string
+  // Relacion
+  ownerId : string
 }
