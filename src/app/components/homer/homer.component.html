@@ -1,1 +1,24 @@
-<p>homer works!</p>
+<img src="/../src/assets/portada-calavera-dia-de-muertos.webp" alt="Imagen" srcset="">
+<p-carousel
+  [value]="images"
+  [numVisible]="1"
+  [numScroll]="1"
+  [circular]="true"
+  [autoplayInterval]="3000"
+  styleClass="custom-carousel">
+
+  <ng-template pTemplate="item" let-image>
+    <div class="carousel-item">
+      <img [src]="image" alt="Imagen del carrusel" class="carousel-image">
+    </div>
+  </ng-template>
+</p-carousel>
+
+<!-- Primera Lista -->
+<div class="carousel-container">
+  <div class="carousel-scroll">
+    <div *ngFor="let item of items">
+      <app-book-card [item]="item"></app-book-card>
+    </div>
+  </div>
+</div>
