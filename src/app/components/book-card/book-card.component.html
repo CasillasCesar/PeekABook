@@ -1,0 +1,44 @@
+
+
+<p-card [header]="item['dataBook']['title']" [style]="{ width: '15em', 'background-color':'#FEF7FF'}">
+  <ng-template pTemplate="header">
+    <div class="grid" style="margin-right: 0em; margin-left: 0em; background-color: #f6d7fa;">
+      <div class="col-5">
+        <p-avatar
+        [label]="item['user']['name'][1]"
+        styleClass="mr-2"
+        [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }"
+        shape="circle" />
+      </div>
+      <div class="col-6"></div>
+    </div>
+  </ng-template>
+  <div style="height: 210px;">
+    <p-carousel headerText="headerText" [value]='item["dataBook"]["images"]'>
+      <ng-template let-item pTemplate="item">
+        <img alt="Card" [src]="item" width="100%"/>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <ng-template pTemplate="footer">
+      <div class="flex gap-3 mt-1">
+          <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
+          <p-button label="Save" class="w-full" styleClass="w-full" />
+      </div>
+  </ng-template>
+</p-card>
+
+
+<!-- <div class="carousel-container">
+  <div class="carousel-scroll">
+    <div *ngFor="let item of items" class="carousel-item">
+      <p-card class="carousel-card">
+        <img [src]="item.image" alt="Image" class="carousel-image">
+        <div class="p-mt-2">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.description }}</p>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div> -->
