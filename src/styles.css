@@ -4,6 +4,9 @@
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 
+body{
+  background-color: #F8F8F0;
+}
 
 .p-toolbar{
   border: 0px !important;
