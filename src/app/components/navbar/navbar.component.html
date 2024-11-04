@@ -8,15 +8,30 @@
       <i class="pi pi-search" style="cursor: pointer; color: white;"></i>
     </span>
   </div>
-  <div class="col-12 sm:col-5 md:col-4" style="text-align: center; align-items: center;">
+  <div *ngIf="!auth" class="col-12 sm:col-5 md:col-4" style="text-align: center; align-items: center;">
       <button class="p-button mr-1">Registrarse</button>
       <button class="p-button">Iniciar Sesion</button>
   </div>
+  <div *ngIf="auth" class="col-12 sm:col-5 md:col-4" style="text-align: center; align-items: center;">
+    <p-avatar
+    styleClass="mr-2"
+    [style]="{ 'cursor':'pointer','background-color': '#3B82F6', color: 'white' }"
+    size="large"
+    shape="circle">
+    <i class="pi pi-calendar" style="font-size: 1.5rem"></i>
+    </p-avatar>
+    <p-avatar
+        [label]="'C'"
+        styleClass="mr-2"
+        [style]="{ 'cursor':'pointer','background-color': 'white', color: '#1a2551' }"
+        size="xlarge"
+        shape="circle" />
+  </div>
 </div>
 
-  <div class="grid " [style]="{'background-color': '#8B4513','align-items':'center'}">
+  <div class="grid " [style]="{'cursor':'pointer','background-color': '#8B4513','align-items':'center'}">
     <div class="col-12 ">
-      <p-menubar [model]="items" [style]="{'background-color': 'transparent'}" />
+      <p-menubar [model]="items" [style]="{'cursor':'pointer','background-color': 'transparent'}" />
     </div>
   </div>
 
