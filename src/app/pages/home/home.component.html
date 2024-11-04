@@ -1,9 +1,11 @@
-<header>
+<header style="height: auto;">
   <app-navbar [auth]="false"></app-navbar>
 </header>
-<article>
-  <router-outlet></router-outlet>
-</article>
-<footer>
+<div id="body" style="height: 76vh; overflow-y: auto;">
+  <article>
+    <router-outlet></router-outlet>
+  </article>
+  <footer>
 
-</footer>
+  </footer>
+</div>
