@@ -23,7 +23,8 @@ import { BookInfoComponent } from './book-info/book-info.component';
   ],
   exports: [
     NavbarComponent,
-    HomerComponent
+    HomerComponent,
+    BookInfoComponent
   ]
 })
 export class ComponentsModule { }
