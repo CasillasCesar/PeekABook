@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PrimengModule } from '../primeng.module';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { HomerComponent } from './homer/homer.component';
+import { BookCardComponent } from './book-card/book-card.component';
 
 
 
@@ -11,7 +12,8 @@ import { HomerComponent } from './homer/homer.component';
   declarations: [
     NavbarComponent,
     BreadcrumbComponent,
-    HomerComponent
+    HomerComponent,
+    BookCardComponent
   ],
   imports: [
     CommonModule,
