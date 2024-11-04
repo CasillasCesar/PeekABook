@@ -5,6 +5,7 @@ import { PrimengModule } from '../primeng.module';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { HomerComponent } from './homer/homer.component';
 import { BookCardComponent } from './book-card/book-card.component';
+import { BookInfoComponent } from './book-info/book-info.component';
 
 
 
@@ -13,7 +14,8 @@ import { BookCardComponent } from './book-card/book-card.component';
     NavbarComponent,
     BreadcrumbComponent,
     HomerComponent,
-    BookCardComponent
+    BookCardComponent,
+    BookInfoComponent
   ],
   imports: [
     CommonModule,
