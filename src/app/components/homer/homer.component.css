@@ -28,3 +28,30 @@
   border-radius: 5px; /* Bordes redondeados */
 }
 
+.invitation-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  border-radius: 8px;
+  max-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+
+.centered-card {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right-card {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.top-card {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

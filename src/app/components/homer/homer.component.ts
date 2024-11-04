@@ -10,11 +10,37 @@ import { BooksService } from '../../services/books.service';
 export class HomerComponent {
   items : BookCard[] = [];
   images = [
-    "assets\dummies\portada-calavera-dia-de-muertos.webp",
-    "assets\dummies\los-elementos-de-un-altar-de-muertos.jpg",
-    "https://www.caminoreal.com/storage/app/media/Blog/los-elementos-de-un-altar-de-muertos.jpg"
+    {
+      url:"assets/los-elementos-de-un-altar-de-muertos.jpg",
+      content : {
+        title: 'Día de Muertos',
+        message: 'Explora recetarios únicos para Día de Muertos y más.',
+        position: 'center',
+      }
+    },
+    {
+      url:"assets/portada-calavera-dia-de-muertos.webp",
+      content : {
+        title: 'Folclor Mexicano',
+         message: 'Descubre historias y tradiciones de nuestro folclor.',
+        position: 'right'
+       }
+    },
+    {
+      url:"assets/halloween.gif",
+      content : {
+        title: 'Halloween y Misterio',
+        message: 'Lee y comparte historias de Halloween y misterios.',
+        position:'top'
+      }
+    },
   ]
+
   constructor(private bookService : BooksService){
     this.items = this.bookService.getDummiBooks()
+  }
+
+  register() {
+    // Acción de registro (navegar a la página de registro o abrir un modal)
   }
 }
