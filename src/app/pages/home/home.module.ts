@@ -16,7 +16,7 @@ import { HomerComponent } from '../../components/homer/homer.component';
       [
         { path: '', component: HomeComponent, children:[
           { path: '', redirectTo: 'content', pathMatch: 'full' },
-          { path: 'content', component: HomerComponent },
+          { path: 'content', component: HomerComponent, data:{loged:true}},
         ] },
       ]
     )
