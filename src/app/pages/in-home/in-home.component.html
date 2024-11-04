@@ -1,7 +1,17 @@
 <header>
   <app-navbar [auth]="true"></app-navbar>
 </header>
-<article>
+
+<div id="body" style="height: 75vh; overflow-y: auto;">
+  <article>
+    <router-outlet></router-outlet>
+  </article>
+  <footer>
+
+  </footer>
+</div>
+
+<!-- <article> -->
   <!-- <div class="grid">
     <div class="col-12 md:col-6 lg:col-4">
       <div class="card">Columna 1</div>
@@ -14,7 +24,7 @@
     </div>
   </div> -->
 
-</article>
+<!-- </article>
 <footer>
 
-</footer>
+</footer> -->
