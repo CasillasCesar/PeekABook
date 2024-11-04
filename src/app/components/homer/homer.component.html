@@ -1,4 +1,5 @@
 <!-- <img src="/../src/assets/portada-calavera-dia-de-muertos.webp" alt="Imagen" srcset=""> -->
+ <!-- Carrusel de invitacion -->
 <p-carousel
   [value]="images"
   [numVisible]="1"
@@ -28,6 +29,15 @@
   </ng-template>
 </p-carousel>
 
+<!-- Region 1 -->
+
+<div style="width: 100%; background-color: rgb(214, 90, 7); height: 2.5em; display: flex; align-items: center; justify-content: center;">
+  <h3>
+    Especial Terror
+  </h3>
+</div>
+
+
 <!-- Primera Lista -->
 <div class="carousel-container">
   <div class="carousel-scroll">
@@ -36,3 +46,21 @@
     </div>
   </div>
 </div>
+
+<!-- Region 2 -->
+
+<div style="width: 100%; background-color: #64748B; height: 2.5em; display: flex; align-items: center; justify-content: center;">
+  <h3>
+    Libros Disponibles
+  </h3>
+</div>
+
+
+<div class="carousel-container">
+  <div class="carousel-scroll">
+    <div *ngFor="let item of items">
+      <app-book-card [item]="item"></app-book-card>
+    </div>
+  </div>
+</div>
+
