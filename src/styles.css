@@ -30,3 +30,7 @@ body{
 .p-card-title{
   height: 2em;
 }
+
+.p-menuitem-icon, .p-menubar-button{
+  color: black;
+}
