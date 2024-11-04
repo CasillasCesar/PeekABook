@@ -14,7 +14,7 @@ import { HomerComponent } from '../../components/homer/homer.component';
     ComponentsModule,
     RouterModule.forChild(
       [
-        { path: '', component: HomeComponent, children:[
+        { path: 'home', component: HomeComponent, children:[
           { path: '', redirectTo: 'content', pathMatch: 'full' },
           { path: 'content', component: HomerComponent, data:{loged:false}},
         ] },
