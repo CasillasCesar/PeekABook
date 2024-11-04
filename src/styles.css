@@ -34,3 +34,9 @@ body{
 .p-menuitem-icon, .p-menubar-button{
   color: black;
 }
+
+.active-menu-item {
+  background-color: #F8F8F0;
+  text-decoration: underline;
+  border-radius: 0px !important;
+}

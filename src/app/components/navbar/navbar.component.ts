@@ -1,39 +1,46 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   @Input('auth') auth: boolean = false;
 
-  items = [
+  items: MenuItem[] = [
     {
       label: 'Home',
       icon: 'pi pi-home',
+      routerLink: '/home',
     },
     {
       label: 'Features',
       icon: 'pi pi-star',
+      routerLink: '/home/features',
     },
     {
       label: 'Projects',
       icon: 'pi pi-search',
+      routerLink: '/home/projects',
       items: [
         {
           label: 'Components',
           icon: 'pi pi-bolt',
+          routerLink: '/home/projects/components',
         },
         {
           label: 'Blocks',
           icon: 'pi pi-server',
+          routerLink: '/home/projects/blocks',
         },
         {
           label: 'UI Kit',
           icon: 'pi pi-pencil',
+          routerLink: '/home/projects/ui-kit',
         },
         {
           label: 'Templates',
@@ -42,10 +49,12 @@ export class NavbarComponent {
             {
               label: 'Apollo',
               icon: 'pi pi-palette',
+              routerLink: '/home/projects/templates/apollo',
             },
             {
               label: 'Ultima',
               icon: 'pi pi-palette',
+              routerLink: '/home/projects/templates/ultima',
             },
           ],
         },
@@ -54,6 +63,7 @@ export class NavbarComponent {
     {
       label: 'Contact',
       icon: 'pi pi-envelope',
+      routerLink: '/home/contact',
     },
   ];
 
@@ -67,7 +77,17 @@ export class NavbarComponent {
 
 home : MenuItem = { icon: 'pi pi-home', routerLink: '/' };
 
-  constructor(private router : Router){
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.highlightActiveItem();
+    });
+  }
+
+  ngOnInit(): void {
+
 
   }
 
@@ -76,7 +96,7 @@ home : MenuItem = { icon: 'pi pi-home', routerLink: '/' };
   }
 
   goHome(){
-    console.warn(this.auth);
+    console.log(this.auth);
 
     if(this.auth){
       this.router.navigateByUrl("in-home")
@@ -85,4 +105,21 @@ home : MenuItem = { icon: 'pi pi-home', routerLink: '/' };
     }
   }
 
+  highlightActiveItem() {
+    const currentRoute = this.router.url;
+    console.log(currentRoute);
+
+    this.items.forEach(item => {
+      item.styleClass = item.routerLink === currentRoute ? 'active-menu-item' : '';
+
+      // Verificar submenús
+      if (item.items) {
+        item.items.forEach(subItem => {
+          subItem.styleClass = subItem.routerLink === currentRoute ? 'active-menu-item' : '';
+        });
+      }
+    });
+    if(currentRoute=="/home/content" || currentRoute=="/in-home/content")
+      this.items[0].styleClass = 'active-menu-item'
+  }
 }
