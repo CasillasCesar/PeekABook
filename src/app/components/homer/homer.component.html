@@ -21,7 +21,8 @@
         }">
         <h3>{{ image.content.title }}</h3>
         <p>{{ image.content.message }}</p>
-        <p-button (click)="register()" icon="pi pi-iconName" label="Regístrate ahora"></p-button>
+        <p-button *ngIf="!loged" (click)="register()" icon="pi pi-iconName" label="Regístrate ahora"></p-button>
+        <p-button *ngIf="loged" (click)="ver()" icon="pi pi-iconName" label="Ver"></p-button>
       </div>
     </div>
   </ng-template>

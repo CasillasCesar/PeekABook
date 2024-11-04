@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BookCard } from '../../models/book-card';
 import { BooksService } from '../../services/books.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-homer',
@@ -8,6 +9,9 @@ import { BooksService } from '../../services/books.service';
   styleUrl: './homer.component.css'
 })
 export class HomerComponent {
+
+  loged : boolean = false;
+
   items : BookCard[] = [];
   images = [
     {
@@ -16,6 +20,7 @@ export class HomerComponent {
         title: 'Día de Muertos',
         message: 'Explora recetarios únicos para Día de Muertos y más.',
         position: 'center',
+        search : 'Recetas'
       }
     },
     {
@@ -23,7 +28,8 @@ export class HomerComponent {
       content : {
         title: 'Folclor Mexicano',
          message: 'Descubre historias y tradiciones de nuestro folclor.',
-        position: 'right'
+        position: 'right',
+        search : 'Leyendas Mexicanas'
        }
     },
     {
@@ -31,16 +37,27 @@ export class HomerComponent {
       content : {
         title: 'Halloween y Misterio',
         message: 'Lee y comparte historias de Halloween y misterios.',
-        position:'top'
+        position:'top',
+        search : 'Halloween'
       }
     },
   ]
 
-  constructor(private bookService : BooksService){
+  constructor(private bookService : BooksService, private route : ActivatedRoute){
     this.items = this.bookService.getDummiBooks()
   }
 
+  ngOnInit(): void {
+    this.route.data.subscribe(data => {
+      this.loged = data['loged'];
+      console.log('Valor de loged:', this.loged); // Prueba a ver el valor en la consola
+    });
+  }
+
   register() {
+    // Acción de registro (navegar a la página de registro o abrir un modal)
+  }
+  ver() {
     // Acción de registro (navegar a la página de registro o abrir un modal)
   }
 }
