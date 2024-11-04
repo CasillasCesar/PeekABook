@@ -18,3 +18,7 @@
 .p-menuitem .p-menuitem-text{
   color: black;
 }
+
+.p-menuitem-icon, .p-menubar-button{
+  color: black;
+}
