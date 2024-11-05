@@ -20,4 +20,5 @@ export interface Book {
   description : string
   // Relacion
   ownerId : string
+  calif : 0 | 1 | 2 | 3 | 4 | 5
 }
