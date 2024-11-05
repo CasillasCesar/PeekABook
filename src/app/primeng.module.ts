@@ -11,6 +11,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
 
 //Primeng Modules Array
 const modPrime : any [] = [
@@ -22,7 +24,9 @@ const modPrime : any [] = [
   BreadcrumbModule,
   CardModule,
   CarouselModule,
-  ButtonModule
+  ButtonModule,
+  RatingModule,
+  FormsModule
 ];
 
 @NgModule({
