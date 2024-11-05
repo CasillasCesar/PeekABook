@@ -1,1 +1,89 @@
-<p>book-info works!</p>
+<div class="grid mt-2">
+
+  <!-- Imagenes -->
+  <div class="col-12 sm:col-12 md:col-7" id="images">
+    <div class="text-center p-3 border-round-sm" style="height: 40em;">
+      <p-carousel [value]="book.images" [numVisible]="1" styleClass="carousel-card">
+        <ng-template pTemplate="item" let-image>
+          <img [src]="image" alt="Image" class="carousel-image" width="100%" style="height: 36.5em;">
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+
+  <!-- Información -->
+  <div class="col-12 sm:col-12 md:col-5" id="description">
+    <div class="text-center p-3 border-round-sm bg-white font-bold " style="height: 40em; overflow-y: auto;">
+      <div class="grid">
+        <!-- Titulo -->
+        <div class="col-12 font-bold">
+          {{book.title}}
+        </div>
+        <div class="col-12" style="font-size: .7em;">
+          {{book.author}}
+        </div>
+        <div class="col-12">
+          <p-rating [(ngModel)]="book.calif" [cancel]="false" [disabled]="false" [readonly]="true"/>
+        </div>
+        <!-- Subtitulo -->
+        <div class="col-12" style="text-align: justify;">
+          Synopsis:
+        </div>
+        <div class="col-12" style="text-align: justify; overflow-y: auto; height: 15em;">
+          {{book.synopsis}}
+        </div>
+        <!-- User Info -->
+        <div class="col-12 mt-2" style="text-align: right; background-color: #2563eb;">
+          <div class="col-12 m-1 bg-white">
+            <div class="col-12" style="text-align: center;">
+              User Information
+            </div>
+            <div class="grid">
+              <div class="col-6" style="text-align: left;">
+                <p-rating [(ngModel)]="user.calif" [cancel]="false" [disabled]="false" [readonly]="true"/>
+              </div>
+              <div class="col-6" style="text-align: right;">
+                <p-avatar
+                [label]="user['name'][0]"
+                styleClass="mr-2"
+                [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }"
+                shape="circle" />
+                {{user.name}}
+              </div>
+            </div>
+            <div class="col-12">
+              {{user.city}}
+            </div>
+            <div class="col-12">
+              {{user.state}}
+            </div>
+            <div class="col-12" *ngIf="loged" style="text-align: center;">
+              <p-button label="Mandar Mensaje" [rounded]="true" />
+            </div>
+            <div class="col-12" *ngIf="!loged" style="text-align: center;">
+              <p-button label="Registrarse" [rounded]="true" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Region 1 -->
+
+<div style="width: 100%; background-color: rgb(214, 90, 7); height: 2.5em; display: flex; align-items: center; justify-content: center;">
+  <h3>
+    Especial Terror
+  </h3>
+</div>
+
+
+<!-- Primera Lista -->
+<div class="carousel-container">
+  <div class="carousel-scroll">
+    <div *ngFor="let item of items">
+      <app-book-card [item]="item"></app-book-card>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,22 @@
+.carousel-container {
+  overflow-x: auto;
+  padding: 1em;
+  scroll-snap-type: x mandatory; /* Hace que el scroll horizontal sea suave */
+}
+
+.carousel-scroll {
+  display: flex;
+  gap: 1em;
+}
+
+.carousel-item {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 180px; /* Ancho del card, ajustable */
+  scroll-snap-align: start; /* Alinea los items al inicio del viewport */
+}
+
+.carousel-card {
+  width: 100%;
+  height: 250px;
+}
