@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../../components/components.module';
 import { HomerComponent } from '../../components/homer/homer.component';
+import { BookInfoComponent } from '../../components/book-info/book-info.component';
 
 
 
@@ -17,6 +18,7 @@ import { HomerComponent } from '../../components/homer/homer.component';
         { path: 'home', component: HomeComponent, children:[
           { path: '', redirectTo: 'content', pathMatch: 'full' },
           { path: 'content', component: HomerComponent, data:{loged:false}},
+          { path: 'book/:id', component: BookInfoComponent, data:{loged:false}},
         ] },
       ]
     )
