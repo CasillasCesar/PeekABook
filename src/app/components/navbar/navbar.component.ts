@@ -109,18 +109,18 @@ home : MenuItem = { icon: 'pi pi-home', routerLink: '/' };
     const currentRoute = this.router.url;
     console.log(currentRoute);
 
-    this.items.forEach(item => {
-      item.styleClass = item.routerLink === currentRoute ? 'active-menu-item' : '';
+    // this.items.forEach(item => {
+    //   item.styleClass = item.routerLink === currentRoute ? 'active-menu-item' : '';
 
-      // Verificar submenús
-      if (item.items) {
-        item.items.forEach(subItem => {
-          subItem.styleClass = subItem.routerLink === currentRoute ? 'active-menu-item' : '';
-        });
-      }
-    });
-    if(currentRoute=="/home/content" || currentRoute=="/in-home/content")
-      this.items[0].styleClass = 'active-menu-item'
+    //   // Verificar submenús
+    //   if (item.items) {
+    //     item.items.forEach(subItem => {
+    //       subItem.styleClass = subItem.routerLink === currentRoute ? 'active-menu-item' : '';
+    //     });
+    //   }
+    // });
+    // if(currentRoute=="/home/content" || currentRoute=="/in-home/content")
+      // this.items[0].styleClass = 'active-menu-item'
   }
 
   move(route:string){
