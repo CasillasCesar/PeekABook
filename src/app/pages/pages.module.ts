@@ -7,6 +7,7 @@ import { InHomeModule } from './in-home/in-home.module';
 import { ComponentsModule } from '../components/components.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule
   ],
   exports:[
     HomeModule,
