@@ -17,8 +17,8 @@ import { BookInfoComponent } from '../../components/book-info/book-info.componen
       [
         { path: 'home', component: HomeComponent, children:[
           { path: '', redirectTo: 'content', pathMatch: 'full' },
-          { path: 'content', component: HomerComponent, data:{loged:false}},
-          { path: 'book/:id', component: BookInfoComponent, data:{loged:false}},
+          { path: 'content', component: HomerComponent, data:{ breadcrumb: 'Home', loged:false}},
+          { path: 'book/:id', component: BookInfoComponent, data:{breadcrumb: 'Book Details',loged:false}},
         ] },
       ]
     )
