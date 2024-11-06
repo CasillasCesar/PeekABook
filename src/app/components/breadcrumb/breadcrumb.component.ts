@@ -6,21 +6,24 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
-  styleUrl: './breadcrumb.component.css'
+  styleUrls: ['./breadcrumb.component.css']
 })
-
 export class BreadcrumbComponent implements OnInit {
   bread_items: MenuItem[] = [];
-  home: MenuItem = { icon: 'pi pi-home', routerLink: '/' };
+  home: MenuItem = { icon: 'pi pi-home', routerLink: '/home' };
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    // Escucha los cambios de ruta
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.bread_items = this.createBreadcrumbs(this.route.root);
       });
+
+    // Inicializa el breadcrumb cuando se carga manualmente
+    this.bread_items = this.createBreadcrumbs(this.route.root);
   }
 
   private createBreadcrumbs(route: ActivatedRoute, url: string = '', breadcrumbs: MenuItem[] = []): MenuItem[] {
@@ -32,6 +35,7 @@ export class BreadcrumbComponent implements OnInit {
 
     const childRoute = children[0];
     const routeURL: string = childRoute.snapshot.url.map(segment => segment.path).join('/');
+
     if (routeURL !== '') {
       url += `/${routeURL}`;
     }
