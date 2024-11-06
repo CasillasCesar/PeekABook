@@ -9,8 +9,8 @@
     </span>
   </div>
   <div *ngIf="!auth" class="col-12 sm:col-5 md:col-4" style="text-align: center; align-items: center;">
-      <button class="p-button mr-1">Registrarse</button>
-      <button class="p-button">Iniciar Sesion</button>
+      <button class="p-button mr-1" (click)="move('register')">Registrarse</button>
+      <button class="p-button" (click)="move('login')">Iniciar Sesion</button>
   </div>
   <div *ngIf="auth" class="col-12 sm:col-5 md:col-4" style="text-align: center; align-items: center;">
     <p-avatar

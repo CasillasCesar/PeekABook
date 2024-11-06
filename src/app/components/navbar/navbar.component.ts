@@ -122,4 +122,8 @@ home : MenuItem = { icon: 'pi pi-home', routerLink: '/' };
     if(currentRoute=="/home/content" || currentRoute=="/in-home/content")
       this.items[0].styleClass = 'active-menu-item'
   }
+
+  move(route:string){
+    this.router.navigateByUrl(`home/${route}`)
+  }
 }
