@@ -6,13 +6,15 @@ import { HomeModule } from './home/home.module';
 import { InHomeModule } from './in-home/in-home.module';
 import { ComponentsModule } from '../components/components.module';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
 @NgModule({
   declarations: [
   
-    LoginComponent
+    LoginComponent,
+        RegisterComponent
   ],
   imports: [
     CommonModule,
