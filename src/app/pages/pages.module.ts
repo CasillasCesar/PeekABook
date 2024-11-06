@@ -12,9 +12,9 @@ import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
-  
+
     LoginComponent,
-        RegisterComponent
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +22,9 @@ import { RegisterComponent } from './register/register.component';
   ],
   exports:[
     HomeModule,
-    InHomeModule
+    InHomeModule,
+    RegisterComponent,
+    LoginComponent
   ]
 })
 export class PagesModule { }

@@ -2,8 +2,18 @@ import { InHomeModule } from './pages/in-home/in-home.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
+  {
+    path:'register',
+    component:RegisterComponent
+  },
+  {
+    path:'login',
+    component:LoginComponent
+  },
   {
     path:"in-home",
     loadChildren : ()=>import('./pages/in-home/in-home.module').then(m => m.InHomeModule)
