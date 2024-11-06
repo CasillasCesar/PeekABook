@@ -21,6 +21,7 @@ export class BooksService {
   dummiBooks : Array<BookCard> = [
     {
       dataBook: {
+        _id:1,
         title: "El retrato de Dorian Gray",
         author: ["Oscar Wilde"],
         isbn: 9780141439570,
@@ -51,6 +52,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:2,
         title: "Cien años de soledad",
         author: ["Gabriel García Márquez"],
         isbn: 9780307474728,
@@ -84,6 +86,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:3,
         title: "To Kill a Mockingbird",
         author: ["Harper Lee"],
         isbn: 9780061120084,
@@ -114,6 +117,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:4,
         title: "1984",
         author: ["George Orwell"],
         isbn: 9780451524935,
@@ -144,6 +148,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:5,
         title: "Brave New World",
         author: ["Aldous Huxley"],
         isbn: 9780060850524,
@@ -174,6 +179,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:6,
         title: "The Catcher in the Rye",
         author: ["J.D. Salinger"],
         isbn: 9780316769488,
@@ -204,6 +210,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:7,
         title: "Pride and Prejudice",
         author: ["Jane Austen"],
         isbn: 9781503290563,
@@ -234,6 +241,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:8,
         title: "The Great Gatsby",
         author: ["F. Scott Fitzgerald"],
         isbn: 9780743273565,
@@ -264,6 +272,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:9,
         title: "Don Quijote de la Mancha",
         author: ["Miguel de Cervantes"],
         isbn: 9788491050168,
@@ -294,6 +303,7 @@ export class BooksService {
     },
     {
       dataBook: {
+        _id:10,
         title: "Moby Dick",
         author: ["Herman Melville"],
         isbn: 9781503280786,

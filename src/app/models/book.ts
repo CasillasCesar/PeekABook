@@ -1,5 +1,6 @@
 export interface Book {
   // Datos importantes del libro ()
+  _id:number,
   title:string,
   author : string[],
   isbn : number,
