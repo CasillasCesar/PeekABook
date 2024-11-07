@@ -6,6 +6,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { HomerComponent } from './homer/homer.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookInfoComponent } from './book-info/book-info.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 
 
@@ -15,7 +16,8 @@ import { BookInfoComponent } from './book-info/book-info.component';
     BreadcrumbComponent,
     HomerComponent,
     BookCardComponent,
-    BookInfoComponent
+    BookInfoComponent,
+    CatalogComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { BookInfoComponent } from './book-info/book-info.component';
   exports: [
     NavbarComponent,
     HomerComponent,
-    BookInfoComponent
+    BookInfoComponent,
+    CatalogComponent
   ]
 })
 export class ComponentsModule { }
