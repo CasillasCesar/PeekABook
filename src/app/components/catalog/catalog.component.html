@@ -1,1 +1,47 @@
-<p>catalog works!</p>
+<div class="grid">
+  <!-- Contenedor de Filtros -->
+  <div class="col-3 sm:col-2 md:col-3 overflow-y-auto" style=" height: 75vh;" id="filtros">
+    <div class="p-3">
+      <h3>Filtros</h3>
+
+      <!-- Formulario de Filtros -->
+      <form [formGroup]="filterForm" (ngSubmit)="applyFilters()">
+        <!-- Campo de Búsqueda -->
+        <div class="p-field">
+          <label for="search">Buscar</label>
+          <input id="search" type="text" formControlName="search" placeholder="Título o Autor" class="p-inputtext">
+        </div>
+
+        <!-- Selección de Categoría -->
+        <div class="p-field">
+          <label for="category">Categoría</label>
+          <select id="category" formControlName="category" class="p-dropdown">
+            <option value="">Todas</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+
+        <!-- Rango de Fecha de Publicación -->
+        <div class="p-field">
+          <label for="dateFrom">Desde</label>
+          <input id="dateFrom" type="date" formControlName="dateFrom" class="p-inputtext">
+        </div>
+        <div class="p-field">
+          <label for="dateTo">Hasta</label>
+          <input id="dateTo" type="date" formControlName="dateTo" class="p-inputtext">
+        </div>
+
+        <button type="submit" class="p-button mt-3 w-full">Aplicar Filtros</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contenedor de Libros -->
+  <div class="col-9 sm:col-10 md:col-9" id="libros">
+    <div class="grid overflow-y-auto" style="height: 75vh;">
+      <div class="col-9 sm:col-3" *ngFor="let book of filteredBooks">
+        <app-book-card [item]="book" class="p-2"></app-book-card>
+      </div>
+    </div>
+  </div>
+</div>

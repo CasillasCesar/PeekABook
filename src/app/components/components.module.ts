@@ -7,6 +7,7 @@ import { HomerComponent } from './homer/homer.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { CatalogComponent } from './catalog/catalog.component';
   ],
   imports: [
     CommonModule,
-    PrimengModule
+    PrimengModule,
+    ReactiveFormsModule
   ],
   exports: [
     NavbarComponent,
