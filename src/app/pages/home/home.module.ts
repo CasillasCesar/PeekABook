@@ -24,12 +24,12 @@ import { CatalogComponent } from '../../components/catalog/catalog.component';
           { path: 'login', component: LoginComponent, data:{ breadcrumb: 'Login', loged:false}},
           { path: 'register', component: RegisterComponent, data:{ breadcrumb: 'Register', loged:false}},
           { path: 'book/:id', component: BookInfoComponent, data:{breadcrumb: 'Book Details',loged:false}},
-          { path: 'catalog', component: CatalogComponent},
-          { path: 'catalog/news', component: CatalogComponent},
-          { path: 'catalog/sci-ti', component: CatalogComponent},
-          { path: 'catalog/history', component: CatalogComponent},
-          { path: 'catalog/art', component: CatalogComponent},
-          { path: 'catalog/fiction', component: CatalogComponent},
+          { path: 'catalog', component: CatalogComponent , data:{loged:false}},
+          { path: 'catalog/news', component: CatalogComponent , data:{loged:false}},
+          { path: 'catalog/sci-ti', component: CatalogComponent , data:{loged:false}},
+          { path: 'catalog/history', component: CatalogComponent , data:{loged:false}},
+          { path: 'catalog/art', component: CatalogComponent , data:{loged:false}},
+          { path: 'catalog/fiction', component: CatalogComponent , data:{loged:false}},
         ] },
       ]
     )
