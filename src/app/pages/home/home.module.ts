@@ -7,6 +7,7 @@ import { HomerComponent } from '../../components/homer/homer.component';
 import { BookInfoComponent } from '../../components/book-info/book-info.component';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { CatalogComponent } from '../../components/catalog/catalog.component';
 
 
 
@@ -23,6 +24,12 @@ import { RegisterComponent } from '../register/register.component';
           { path: 'login', component: LoginComponent, data:{ breadcrumb: 'Login', loged:false}},
           { path: 'register', component: RegisterComponent, data:{ breadcrumb: 'Register', loged:false}},
           { path: 'book/:id', component: BookInfoComponent, data:{breadcrumb: 'Book Details',loged:false}},
+          { path: 'catalog', component: CatalogComponent},
+          { path: 'catalog/news', component: CatalogComponent},
+          { path: 'catalog/sci-ti', component: CatalogComponent},
+          { path: 'catalog/history', component: CatalogComponent},
+          { path: 'catalog/art', component: CatalogComponent},
+          { path: 'catalog/fiction', component: CatalogComponent},
         ] },
       ]
     )

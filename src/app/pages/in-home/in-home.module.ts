@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../../components/components.module';
 import { HomerComponent } from '../../components/homer/homer.component';
 import { BookInfoComponent } from '../../components/book-info/book-info.component';
+import { CatalogComponent } from '../../components/catalog/catalog.component';
 
 
 
@@ -21,6 +22,12 @@ import { BookInfoComponent } from '../../components/book-info/book-info.componen
           { path: '', redirectTo: 'content', pathMatch: 'full' },
           { path: 'content', component: HomerComponent, data:{breadcrumb: 'Home',loged:true}},
           { path: 'book/:id', component: BookInfoComponent, data:{breadcrumb: 'Book Details',loged:true}},
+          { path: 'catalog', component: CatalogComponent},
+          { path: 'catalog/news', component: CatalogComponent},
+          { path: 'catalog/sci-ti', component: CatalogComponent},
+          { path: 'catalog/history', component: CatalogComponent},
+          { path: 'catalog/art', component: CatalogComponent},
+          { path: 'catalog/fiction', component: CatalogComponent},
         ] }
       ]
     )
