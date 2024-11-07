@@ -18,52 +18,41 @@ export class NavbarComponent implements OnInit {
       routerLink: '/home',
     },
     {
-      label: 'Features',
-      icon: 'pi pi-star',
-      routerLink: '/home/features',
-    },
-    {
-      label: 'Projects',
+      label: 'Catalogo',
       icon: 'pi pi-search',
-      routerLink: '/home/projects',
+      routerLink: '/home/catalog',
       items: [
         {
-          label: 'Components',
+          label: 'Recientes',
           icon: 'pi pi-bolt',
-          routerLink: '/home/projects/components',
+          routerLink: '/home/catalog/news',
         },
         {
-          label: 'Blocks',
+          label: 'Ciencia y Tecnología',
           icon: 'pi pi-server',
-          routerLink: '/home/projects/blocks',
+          routerLink: '/home/catalog/sci-ti',
         },
         {
-          label: 'UI Kit',
+          label: 'Historia',
           icon: 'pi pi-pencil',
-          routerLink: '/home/projects/ui-kit',
+          routerLink: '/home/catalog/history',
         },
         {
-          label: 'Templates',
+          label: 'Arte y Cultura',
           icon: 'pi pi-palette',
-          items: [
-            {
-              label: 'Apollo',
-              icon: 'pi pi-palette',
-              routerLink: '/home/projects/templates/apollo',
-            },
-            {
-              label: 'Ultima',
-              icon: 'pi pi-palette',
-              routerLink: '/home/projects/templates/ultima',
-            },
-          ],
+          routerLink: '/home/catalog/art'
+        },
+        {
+          label: 'Ficcion',
+          icon: 'pi pi-sparkles',
+          routerLink: '/home/catalog/fiction'
         },
       ],
     },
     {
-      label: 'Contact',
+      label: 'About Us',
       icon: 'pi pi-envelope',
-      routerLink: '/home/contact',
+      routerLink: '/home/about',
     },
   ];
 
