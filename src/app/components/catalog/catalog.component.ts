@@ -76,6 +76,10 @@ export class CatalogComponent implements OnInit {
         this.filterForm.patchValue({
           category: category
         });
+      }else{
+        this.filterForm.patchValue({
+          search : lastSegment
+        })
       }
 
       // Aplicar filtros iniciales

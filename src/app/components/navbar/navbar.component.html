@@ -4,7 +4,7 @@
   </div>
   <div class="col-12 sm:col-7 md:col-4" style="padding: 0em 0em;">
     <span class="p-input-icon-right" style="width: 100%; background-color: green; cursor: pointer;" (click)="buscar()">
-      <input pInputText class="p-inputtext" placeholder="Search" (keydown.enter)="buscar()" style="width: 88%;"  (click)="$event.stopPropagation()"/>
+      <input pInputText class="p-inputtext" placeholder="Search" (keydown.enter)="buscar()" style="width: 88%;"  (click)="$event.stopPropagation()" [(ngModel)]="searchValue"/>
       <i class="pi pi-search" style="cursor: pointer; color: white;"></i>
     </span>
   </div>

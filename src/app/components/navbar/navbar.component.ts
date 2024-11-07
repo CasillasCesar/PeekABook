@@ -10,6 +10,7 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent implements OnInit {
   @Input('auth') auth: boolean = false;
+  searchValue: string = '';
 
   items: MenuItem[] = [];
 
@@ -30,39 +31,40 @@ export class NavbarComponent implements OnInit {
         this.highlightActiveItem();
       });
   }
+  baseRoute : string = this.auth ? '/in-home' : '/home';
 
   ngOnInit(): void {
-    const baseRoute = this.auth ? '/in-home' : '/home';
+    this.baseRoute = this.auth ? '/in-home' : '/home';
 
     this.items = [
       {
         label: 'Home',
         icon: 'pi pi-home',
-        routerLink: `${baseRoute}`,
+        routerLink: `${this.baseRoute}`,
       },
       {
         label: 'Catálogo',
         icon: 'pi pi-search',
-        routerLink: `${baseRoute}/catalog`,
+        routerLink: `${this.baseRoute}/catalog`,
         items: [
-          { label: 'Recientes', icon: 'pi pi-bolt', routerLink: `${baseRoute}/catalog/news` },
-          { label: 'Ciencia y Tecnología', icon: 'pi pi-server', routerLink: `${baseRoute}/catalog/sci-ti` },
-          { label: 'Historia', icon: 'pi pi-book', routerLink: `${baseRoute}/catalog/history` },
-          { label: 'Arte y Cultura', icon: 'pi pi-palette', routerLink: `${baseRoute}/catalog/art` },
-          { label: 'Ficción', icon: 'pi pi-star', routerLink: `${baseRoute}/catalog/fiction` },
-          { label: 'Realismo Mágico', icon: 'pi pi-magic', routerLink: `${baseRoute}/catalog/magical-realism` },
-          { label: 'Política y Distopía', icon: 'pi pi-exclamation-triangle', routerLink: `${baseRoute}/catalog/political-dystopian` },
-          { label: 'Ciencia Ficción', icon: 'pi pi-rocket', routerLink: `${baseRoute}/catalog/science-fiction` },
-          { label: 'Crecimiento Personal', icon: 'pi pi-user', routerLink: `${baseRoute}/catalog/coming-of-age` },
-          { label: 'Romance', icon: 'pi pi-heart', routerLink: `${baseRoute}/catalog/romance` },
-          { label: 'Aventura', icon: 'pi pi-compass', routerLink: `${baseRoute}/catalog/adventure` },
-          { label: 'No Ficción', icon: 'pi pi-info-circle', routerLink: `${baseRoute}/catalog/non-fiction` },
+          { label: 'Recientes', icon: 'pi pi-bolt', routerLink: `${this.baseRoute}/catalog/news` },
+          { label: 'Ciencia y Tecnología', icon: 'pi pi-server', routerLink: `${this.baseRoute}/catalog/sci-ti` },
+          { label: 'Historia', icon: 'pi pi-book', routerLink: `${this.baseRoute}/catalog/history` },
+          { label: 'Arte y Cultura', icon: 'pi pi-palette', routerLink: `${this.baseRoute}/catalog/art` },
+          { label: 'Ficción', icon: 'pi pi-star', routerLink: `${this.baseRoute}/catalog/fiction` },
+          { label: 'Realismo Mágico', icon: 'pi pi-magic', routerLink: `${this.baseRoute}/catalog/magical-realism` },
+          { label: 'Política y Distopía', icon: 'pi pi-exclamation-triangle', routerLink: `${this.baseRoute}/catalog/political-dystopian` },
+          { label: 'Ciencia Ficción', icon: 'pi pi-rocket', routerLink: `${this.baseRoute}/catalog/science-fiction` },
+          { label: 'Crecimiento Personal', icon: 'pi pi-user', routerLink: `${this.baseRoute}/catalog/coming-of-age` },
+          { label: 'Romance', icon: 'pi pi-heart', routerLink: `${this.baseRoute}/catalog/romance` },
+          { label: 'Aventura', icon: 'pi pi-compass', routerLink: `${this.baseRoute}/catalog/adventure` },
+          { label: 'No Ficción', icon: 'pi pi-info-circle', routerLink: `${this.baseRoute}/catalog/non-fiction` },
         ],
       },
       {
         label: 'Sobre Nosotros',
         icon: 'pi pi-info-circle',
-        routerLink: `${baseRoute}/about`,
+        routerLink: `${this.baseRoute}/about`,
       },
     ];
   }
@@ -90,10 +92,16 @@ export class NavbarComponent implements OnInit {
 
   move(route: string) {
     const baseRoute = this.auth ? 'in-home' : 'home';
-    this.router.navigateByUrl(`/${baseRoute}/${route}`);
+    this.router.navigateByUrl(`/${this.baseRoute}/${route}`);
   }
 
-  buscar(){
-
+  buscar() {
+    if (this.searchValue.trim()) {
+      // Redirigir con la ruta correcta
+      this.router.navigateByUrl(`/${this.baseRoute}/catalog/search/${this.searchValue}`);
+      this.searchValue = "";
+    } else {
+      alert('Por favor ingresa un valor para buscar');
+    }
   }
 }

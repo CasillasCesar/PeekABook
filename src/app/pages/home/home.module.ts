@@ -26,6 +26,7 @@ import { CatalogComponent } from '../../components/catalog/catalog.component';
           { path: 'book/:id', component: BookInfoComponent, data:{breadcrumb: 'Book Details',loged:false}},
           { path: 'catalog/news', component: CatalogComponent, data: { breadcrumb: 'Recientes', loged: false } },
           { path: 'catalog', component: CatalogComponent, data: { breadcrumb: 'Ciencia y Tecnología', loged: false } },
+          { path: 'catalog/search/:busqueda', component: CatalogComponent, data: { breadcrumb: 'Resultados de búsqueda', loged: false } },
           { path: 'catalog/sci-ti', component: CatalogComponent, data: { breadcrumb: 'Ciencia y Tecnología', loged: false } },
           { path: 'catalog/history', component: CatalogComponent, data: { breadcrumb: 'Historia', loged: false } },
           { path: 'catalog/art', component: CatalogComponent, data: { breadcrumb: 'Arte y Cultura', loged: false } },
