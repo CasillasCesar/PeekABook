@@ -8,6 +8,7 @@ import { BookCardComponent } from './book-card/book-card.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -18,7 +19,8 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
     HomerComponent,
     BookCardComponent,
     BookInfoComponent,
-    CatalogComponent
+    CatalogComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomerComponent,
     BookInfoComponent,
-    CatalogComponent
+    CatalogComponent,
+    AboutComponent
   ]
 })
 export class ComponentsModule { }
