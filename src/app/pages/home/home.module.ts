@@ -8,6 +8,7 @@ import { BookInfoComponent } from '../../components/book-info/book-info.componen
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { CatalogComponent } from '../../components/catalog/catalog.component';
+import { AboutComponent } from '../../components/about/about.component';
 
 
 
@@ -37,7 +38,8 @@ import { CatalogComponent } from '../../components/catalog/catalog.component';
           { path: 'catalog/coming-of-age', component: CatalogComponent, data: { breadcrumb: 'Crecimiento Personal', loged: false } },
           { path: 'catalog/romance', component: CatalogComponent, data: { breadcrumb: 'Romance', loged: false } },
           { path: 'catalog/adventure', component: CatalogComponent, data: { breadcrumb: 'Aventura', loged: false } },
-          { path: 'catalog/non-fiction', component: CatalogComponent, data: { breadcrumb: 'No Ficción', loged: false } }
+          { path: 'catalog/non-fiction', component: CatalogComponent, data: { breadcrumb: 'No Ficción', loged: false } },
+          { path: 'about', component: AboutComponent, data: { breadcrumb: 'About Us', loged: false }}, // Ruta para "Sobre Nosotros"
         ] },
       ]
     )
