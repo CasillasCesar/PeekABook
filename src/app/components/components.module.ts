@@ -8,6 +8,7 @@ import { BookCardComponent } from './book-card/book-card.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 import { PublishBookComponent } from './publish-book/publish-book.component';
 
 
@@ -20,6 +21,7 @@ import { PublishBookComponent } from './publish-book/publish-book.component';
     BookCardComponent,
     BookInfoComponent,
     CatalogComponent,
+    AboutComponent,
     PublishBookComponent
   ],
   imports: [
@@ -31,7 +33,8 @@ import { PublishBookComponent } from './publish-book/publish-book.component';
     NavbarComponent,
     HomerComponent,
     BookInfoComponent,
-    CatalogComponent
+    CatalogComponent,
+    AboutComponent
   ]
 })
 export class ComponentsModule { }
