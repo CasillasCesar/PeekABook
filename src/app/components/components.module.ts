@@ -9,6 +9,7 @@ import { BookInfoComponent } from './book-info/book-info.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
+import { PublishBookComponent } from './publish-book/publish-book.component';
 
 
 
@@ -20,7 +21,8 @@ import { AboutComponent } from './about/about.component';
     BookCardComponent,
     BookInfoComponent,
     CatalogComponent,
-    AboutComponent
+    AboutComponent,
+    PublishBookComponent
   ],
   imports: [
     CommonModule,

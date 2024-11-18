@@ -7,8 +7,7 @@ import { HomerComponent } from '../../components/homer/homer.component';
 import { BookInfoComponent } from '../../components/book-info/book-info.component';
 import { CatalogComponent } from '../../components/catalog/catalog.component';
 import { AboutComponent } from '../../components/about/about.component';
-
-
+import { PublishBookComponent } from '../../components/publish-book/publish-book.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +37,7 @@ import { AboutComponent } from '../../components/about/about.component';
           { path: 'catalog/adventure', component: CatalogComponent, data: { breadcrumb: 'Aventura', loged: true } },
           { path: 'catalog/non-fiction', component: CatalogComponent, data: { breadcrumb: 'No Ficción', loged: true } },
           { path: 'about', component: AboutComponent, data: { breadcrumb: 'About Us', loged: true }  }, // Ruta para "Sobre Nosotros"
+          { path: 'publish', component: PublishBookComponent, data: { breadcrumb: 'Publish', loged: true } }
         ] }
       ]
     )
