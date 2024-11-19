@@ -102,15 +102,27 @@
       <input id="price" formControlName="price" type="number" placeholder="Precio del libro" />
     </div>
 
-        <!-- Subir Imagen -->
-        <div class="form-group">
-          <label for="image">Imagen</label>
-          <input type="file" id="image" (change)="onImageSelected($event)" />
-          <small *ngIf="bookForm.get('images')?.invalid && bookForm.get('images')?.touched">
-            Por favor selecciona una imagen.
-          </small>
-        </div>
+     <!-- Subir Imágenes -->
+    <div class="form-group">
+      <label for="image">Imágenes</label>
+      <input
+        type="file"
+        id="image"
+        (change)="onImageSelected($event)"
+        multiple
+        accept="image/*"
+      />
+      <small *ngIf="bookForm.get('images')?.invalid && bookForm.get('images')?.touched">
+        Por favor selecciona al menos una imagen.
+      </small>
+    </div>
 
+    <!-- Mostrar imágenes seleccionadas -->
+    <div class="selected-images">
+      <div *ngFor="let image of selectedImages">
+        {{ image.name }}
+      </div>
+    </div>
     <!-- Descripción -->
     <div class="form-group">
       <label for="description">Descripción</label>
@@ -119,6 +131,7 @@
 
     <!-- Botón -->
     <button type="submit" [disabled]="bookForm.invalid">Guardar Libro</button>
+    <!-- <button (click)="show()">Guardar Libro</button> -->
   </form>
 </div>
 
