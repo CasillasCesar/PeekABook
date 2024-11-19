@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { BookCard } from '../models/book-card';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -334,9 +335,13 @@ export class BooksService {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getDummiBooks():Array<BookCard>{
     return this.dummiBooks
+  }
+
+  publishBooks(formData : any){
+    return this.http.post('http://localhost:5000/api/books', formData)
   }
 }
