@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Images
+/public/Images_Boooks
+/public/Images_Boooks/
