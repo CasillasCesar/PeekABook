@@ -9,6 +9,7 @@ import { PrimengModule } from './primeng.module'
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     PrimengModule,
     PagesModule,
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    HttpClientModule
     ],
   bootstrap: [AppComponent],
   providers: [

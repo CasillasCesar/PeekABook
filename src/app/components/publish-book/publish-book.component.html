@@ -1,1 +1,137 @@
-<p>publish-book works!</p>
+<div class="create-book-container">
+  <h1 class="text-center">Agregar un Nuevo Libro</h1>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <!-- Título -->
+    <div class="form-group">
+      <label for="title">Título del Libro</label>
+      <input id="title" formControlName="title" type="text" placeholder="Título del libro" />
+      <small *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
+        El título es obligatorio.
+      </small>
+    </div>
+
+    <!-- Autor -->
+    <div class="form-group">
+      <label for="author">Autor(es)</label>
+      <input id="author" formControlName="author" type="text" placeholder="Autor(es), separados por coma" />
+      <small *ngIf="bookForm.get('author')?.invalid && bookForm.get('author')?.touched">
+        El autor es obligatorio.
+      </small>
+    </div>
+
+    <!-- ISBN -->
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input id="isbn" formControlName="isbn" type="number" placeholder="ISBN del libro" />
+      <small *ngIf="bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched">
+        El ISBN debe ser un número válido.
+      </small>
+    </div>
+
+    <!-- Editorial -->
+    <div class="form-group">
+      <label for="editorial">Editorial</label>
+      <input id="editorial" formControlName="editorial" type="text" placeholder="Editorial" />
+    </div>
+
+    <!-- Año de Publicación -->
+    <div class="form-group">
+      <label for="pubYear">Año de Publicación</label>
+      <input id="pubYear" formControlName="pubYear" type="date" />
+    </div>
+
+    <!-- Edición -->
+    <div class="form-group">
+      <label for="edition">Edición</label>
+      <input id="edition" formControlName="edition" type="number" placeholder="Número de edición" />
+    </div>
+
+    <!-- Formato -->
+    <div class="form-group">
+      <label for="format">Formato</label>
+      <select id="format" formControlName="format">
+        <option value="Hardcover">Hardcover</option>
+        <option value="Paperback">Paperback</option>
+      </select>
+    </div>
+
+    <!-- Idioma -->
+    <div class="form-group">
+      <label for="language">Idioma</label>
+      <input id="language" formControlName="language" type="text" placeholder="Idioma del libro" />
+    </div>
+
+    <!-- Género -->
+    <div class="form-group">
+      <label for="genre">Género</label>
+      <select id="genre" formControlName="genre">
+        <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+      </select>
+      <small *ngIf="bookForm.get('genre')?.invalid && bookForm.get('genre')?.touched">
+        Por favor selecciona un género.
+      </small>
+    </div>
+
+    <!-- Sinopsis -->
+    <div class="form-group">
+      <label for="synopsis">Sinopsis</label>
+      <textarea id="synopsis" formControlName="synopsis" rows="4" placeholder="Sinopsis del libro"></textarea>
+    </div>
+
+    <!-- Palabras clave -->
+    <div class="form-group">
+      <label for="keywords">Palabras Clave</label>
+      <input id="keywords" formControlName="keywords" type="text" placeholder="Palabras clave, separadas por coma" />
+    </div>
+
+    <!-- Número de páginas -->
+    <div class="form-group">
+      <label for="numPages">Número de Páginas</label>
+      <input id="numPages" formControlName="numPages" type="number" placeholder="Número de páginas" />
+    </div>
+
+    <!-- Ubicación -->
+    <div class="form-group">
+      <label for="location">Ubicación</label>
+      <input id="location" formControlName="location" type="text" placeholder="Ubicación física del libro" />
+    </div>
+
+    <!-- Precio -->
+    <div class="form-group">
+      <label for="price">Precio</label>
+      <input id="price" formControlName="price" type="number" placeholder="Precio del libro" />
+    </div>
+
+     <!-- Subir Imágenes -->
+    <div class="form-group">
+      <label for="image">Imágenes</label>
+      <input
+        type="file"
+        id="image"
+        (change)="onImageSelected($event)"
+        multiple
+        accept="image/*"
+      />
+      <small *ngIf="bookForm.get('images')?.invalid && bookForm.get('images')?.touched">
+        Por favor selecciona al menos una imagen.
+      </small>
+    </div>
+
+    <!-- Mostrar imágenes seleccionadas -->
+    <div class="selected-images">
+      <div *ngFor="let image of selectedImages">
+        {{ image.name }}
+      </div>
+    </div>
+    <!-- Descripción -->
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" formControlName="description" rows="4" placeholder="Descripción del libro"></textarea>
+    </div>
+
+    <!-- Botón -->
+    <button type="submit" [disabled]="bookForm.invalid">Guardar Libro</button>
+    <!-- <button (click)="show()">Guardar Libro</button> -->
+  </form>
+</div>
+

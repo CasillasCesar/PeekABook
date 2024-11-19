@@ -67,6 +67,13 @@ export class NavbarComponent implements OnInit {
         routerLink: `${this.baseRoute}/about`,
       },
     ];
+
+    if (this.auth) {
+      this.items.push({
+        label: 'Publicar Libro',
+        icon: 'pi pi-pencil',
+        routerLink: '/in-home/publish',
+      });}
   }
 
   goHome(){
