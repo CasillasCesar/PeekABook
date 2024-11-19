@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BooksService } from '../../services/books.service';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-publish-book',
@@ -25,7 +26,7 @@ export class PublishBookComponent {
   ];
   selectedImages: File[] = []; // Permitir múltiples imágenes
 
-  constructor(private fb: FormBuilder, private booksService: BooksService) {
+  constructor(private fb: FormBuilder, private booksService: BooksService, private userss : UsersService) {
     this.bookForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
       author: ['', Validators.required],
@@ -71,6 +72,8 @@ export class PublishBookComponent {
           formData.append(key, this.bookForm.get(key)?.value);
         }
       });
+
+      formData.append("ownerId",this.userss.getID().toString())
 
       // Agregar las imágenes individualmente
       this.selectedImages.forEach((image, index) => {
