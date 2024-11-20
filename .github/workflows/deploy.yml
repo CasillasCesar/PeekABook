@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: ls
+      run: ls -la
+
     - name: Disable Jekyll
       run: echo > ./dist/PeekABook/.nojekyll
 
