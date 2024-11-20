@@ -28,7 +28,7 @@ jobs:
       run: ls -la ./dist
 
     - name: Disable Jekyll
-      run: echo > ./dist/PeekABook/.nojekyll
+      run: echo > ./dist/peek-abook/.nojekyll
 
     - name: Deploy to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v4.1.0
