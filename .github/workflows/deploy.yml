@@ -24,6 +24,9 @@ jobs:
     - name: Build project
       run: npm run build --prod --omit=dev
 
+    - name: ls
+      run: ls -la
+
     - name: Prepare SPA routing (404.html)
       run: cp dist/peek-abook/index.html dist/peek-abook/404.html
 
