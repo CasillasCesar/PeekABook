@@ -33,6 +33,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v4.1.0
       with:
-        build_dir: dist/peek-abook
+        build_dir: dist/peek-abook/browser
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
