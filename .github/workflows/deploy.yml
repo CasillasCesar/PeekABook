@@ -25,7 +25,7 @@ jobs:
       run: npm run build --prod --omit=dev --base-href "PeekABook"
 
     - name: ls
-      run: ls -la
+      run: ls -la ./dist
 
     - name: Disable Jekyll
       run: echo > ./dist/PeekABook/.nojekyll
