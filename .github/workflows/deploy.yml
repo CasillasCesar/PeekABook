@@ -24,8 +24,11 @@ jobs:
     - name: Build project
       run: npm run build --prod --omit=dev
 
+    - name: Prepare SPA routing (404.html)
+      run: cp dist/peek-abook/index.html dist/peek-abook/404.html
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/PeekABook
+        publish_dir: ./dist/peek-abook
