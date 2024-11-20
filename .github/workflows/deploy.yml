@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Disable Jekyll
-      run: echo > ./dist/peek-abook/.nojekyll
+      run: echo > ./dist/PeekABook/.nojekyll
 
     - name: Checkout code
       uses: actions/checkout@v3
