@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Disable Jekyll
+      run: echo > ./dist/peek-abook/.nojekyll
+
     - name: Checkout code
       uses: actions/checkout@v3
 
@@ -22,7 +25,7 @@ jobs:
       run: npm install
 
     - name: Build project
-      run: npm run build --prod --omit=dev
+      run: npm run build --prod --omit=dev --base-href "/PeekABook/"
 
     - name: Deploy to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v4.1.0
