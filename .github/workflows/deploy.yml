@@ -16,28 +16,25 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 22.11.0
+        node-version: 22.11.0 # Se mantiene la versión de Node.js según tu configuración actual
 
     - name: Install dependencies
       run: npm install
 
     - name: Build project
-      run: npm run build --prod --omit=dev --base-href "PeekABook"
+      run: npm run build -- --base-href "/PeekABook/"
 
-    - name: ls
-      run: ls -la ./dist
+    - name: Verify build output
+      run: ls -la ./dist/peek-abook/browser # Verifica el contenido del build
 
     - name: Disable Jekyll
-      run: echo > ./dist/peek-abook/.nojekyll
+      run: echo > ./dist/peek-abook/browser/.nojekyll
 
     - name: Prepare SPA routing (404.html)
       run: cp ./dist/peek-abook/browser/index.html ./dist/peek-abook/browser/404.html
 
-
     - name: Deploy to GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v4.1.0
-
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        build_dir: dist/peek-abook/browser
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist/peek-abook/browser
